@@ -49,6 +49,14 @@ public class UserController {
                         WebMvcLinkBuilder.methodOn(this.getClass())
                                 .createUser(user)).withRel("createUser");
 
+        /*
+        HATEOAS code with earlier versions looks something like this:
+        Resource and ControllerLinkBuilder instead of EntityModel and WebMvcLinkBuilder.
+        Resource<User> resource = new Resource<User>(user);
+        ControllerLinkBuilder linkTo =
+        linkTo(methodOn(this.getClass()).retrieveAllUsers());
+         */
+
         user.add(selfLink,retrieveAllUsers,createUser);
 
         return ResponseEntity.ok(user);

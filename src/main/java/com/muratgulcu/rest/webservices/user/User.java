@@ -1,5 +1,6 @@
 package com.muratgulcu.rest.webservices.user;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import org.springframework.hateoas.RepresentationModel;
 
 import javax.validation.constraints.Size;
