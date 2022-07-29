@@ -19,7 +19,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
     public final ResponseEntity<Object> handleAllExceptions(Exception ex, WebRequest request){
 
         ExceptionResponse exceptionResponse = new ExceptionResponse(LocalDateTime.now(),
-                ex.getMessage(), request.getDescription(true));
+                ex.getMessage(), request.getDescription(false));
 
         return  new ResponseEntity(exceptionResponse, HttpStatus.NOT_FOUND);
     }
